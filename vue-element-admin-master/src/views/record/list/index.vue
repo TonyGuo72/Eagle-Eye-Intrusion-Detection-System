@@ -11,11 +11,11 @@
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">
         查找
       </el-button>
-      <el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">
-        导出
-      </el-button>
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="dialog_Visible=true">
         查看回放
+      </el-button>
+      <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="dialog_Visiblee=true">
+        入侵统计
       </el-button>
     </div>
 
@@ -106,8 +106,15 @@
 
     <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getRecordList" />
 
-    <el-dialog :visible.sync="dialog_Visible" v-if="dialog_Visible" style="width: 100%" center @close="dialog_Visible=false">
+    <el-dialog :visible.sync="dialog_Visible" v-if="dialog_Visible" style="width: 110%;margin-left: -50px"  @close="dialog_Visible=false">
       <el-image style="width: 800px;height: 640px;position: center" :src="playvideo" ></el-image>
+    </el-dialog>
+
+    <el-dialog :visible.sync="dialog_Visiblee" v-if="dialog_Visiblee" style="width: 100%" center @close="dialog_Visiblee=false">
+      <div class="block" v-for="item in chartsrc">
+        <span class="demonstration"></span>
+        <el-image :src="item.url" fit="contain" :preview-src-list="[item.url]"></el-image>
+      </div>
     </el-dialog>
   </div>
 </template>
@@ -156,8 +163,10 @@ export default {
       total: 0,
       listLoading: true,
       dialog_Visible: false, // 视频播放弹窗
-      playvideo: 'http://172.20.10.5:5000/video', // 存储用户点击的视频播放链接
-      postsrc:'http://172.20.10.5:5000/',
+      dialog_Visiblee:false,
+      playvideo: 'http://192.168.98.179:5000/video', // 存储用户点击的视频播放链接
+      postsrc:'http://192.168.98.179:5000/',
+      chartsrc:[{url:'http://192.168.98.179:5000/cameraindex_image',text:'摄像头统计'},{url:'http://192.168.43.169:5000/time_image',text:'时间统计'}],
       listQuery: {
         page: 1,
         limit: 20,

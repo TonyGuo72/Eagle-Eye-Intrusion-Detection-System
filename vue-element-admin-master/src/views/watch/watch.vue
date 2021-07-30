@@ -49,7 +49,7 @@ import imgtest1 from '/src/views/watch/test2.jpg'
         list: null,
         listLoading: true,
         camera: 1,
-        videosrc:'http://172.20.10.5:5000/video_start',
+        videosrc:'http://192.168.98.179:5000/video_start',
         temp_src:'',
 /*        camaraTypeOptions,*/
         cameraOptions:[{key:'1',display_name:'摄像头1'},{key:'2',display_name: '摄像头2'}],

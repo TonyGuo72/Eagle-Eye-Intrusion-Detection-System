@@ -98,7 +98,7 @@ export const constantRoutes = [
         path: 'user',
         name: 'user',
         component: () => import('@/views/admini/user/complex-table'),
-        meta: { title: '用户管理', icon: 'table' }
+        meta: { title: '用户管理', icon: 'people' }
       }
     ]
   },

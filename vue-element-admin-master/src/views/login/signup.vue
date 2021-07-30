@@ -79,7 +79,10 @@
           type="email"
           tabindex="5"
         />
-        <el-button @click="handleEmail">获取验证码</el-button>
+        <el-button @click="handleEmail"
+                   :disabled="disabled=!showtime">
+          获取验证码
+        </el-button>
       </el-form-item>
 
       <el-form-item label="验证码" prop="verification">
@@ -148,7 +151,9 @@ export default {
         email: '',
         verification: ''
       },
-      temp_verification:'',
+      showtime:true,
+      count:'',
+      timer:null,
       signupRules: {
         username: [{ trigger: 'blur' }],
         password: [{ trigger: 'change', validator: validatePassword }],
@@ -175,8 +180,7 @@ export default {
     handleEmail(){
       this.loading = true
       sendEmail({'email':this.signupForm.email}).then(response => {
-        this.temp_verification=response.data.verification
-        console.log(this.temp_verification)
+
         this.loading = false
       }).catch(() => {
         this.loading = false
@@ -184,18 +188,10 @@ export default {
     },
     handleSend() {
       console.log(this.signupForm)
-      console.log(this.temp_verification)
       if(this.signupForm.username===''||this.signupForm.password===''||this.signupForm.id===''||this.signupForm.email===''||this.signupForm.true_password===''||this.signupForm.verification===''){
         this.$notify({
           title: 'fail',
           message: '还有没填的选项！',
-          type: 'error',
-          duration: 2000
-        })
-      }else if(this.signupForm.verification!=this.temp_verification){
-        this.$notify({
-          title: 'fail',
-          message: '验证码不正确！',
           type: 'error',
           duration: 2000
         })
@@ -208,9 +204,10 @@ export default {
         })
       }else{
         this.loading = true
+        let that=this
         signup(this.signupForm).then(response => {
           console.log(response)
-          this.$notify({
+          that.$notify({
             title: 'Success',
             message: '注册成功！',
             type: 'success',
@@ -219,6 +216,12 @@ export default {
           this.$router.push({ path: '/', query: this.otherQuery })
           this.loading = false
         }).catch(() => {
+          that.$notify({
+            title: 'faild',
+            message: '注册失败！',
+            type: 'error',
+            duration: 2000
+          })
           this.loading = false
         })
       }

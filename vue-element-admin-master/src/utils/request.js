@@ -7,11 +7,11 @@ axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: 'http://172.20.10.5:5000/', // url = base url + request url
-  //baseURL:'http://192.168.43.169:5000/',
+  //baseURL: 'http://172.20.10.5:5000/', // url = base url + request url
+  baseURL:'http://192.168.167.179:5000/',
   //baseURL: 'https://www.fastmock.site/mock/56b063574e99890a2c36cdbfdf9307ed/test',
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  timeout: 30000 // request timeout
 })
 
 // request interceptor

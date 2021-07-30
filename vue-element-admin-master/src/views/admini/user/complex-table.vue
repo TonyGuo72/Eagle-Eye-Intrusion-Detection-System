@@ -11,9 +11,6 @@
       <el-button v-permission="['admin']" v-waves class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">
         添加
       </el-button>
-      <el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">
-        导出
-      </el-button>
     </div>
 
     <el-table
@@ -153,8 +150,8 @@ const genderTypeOptions = [
 ]
 
 const permissionsTypeOptions = [
-  { key: 'admin-token', display_name: '管理员' },
-  { key: 'editor-token', display_name: '普通用户' }
+  { key: 'admin-token', display_name: 'admin-token' },
+  { key: 'editor-token', display_name: 'editor-token' }
 ]
 
 const departmentTypeOptions = [

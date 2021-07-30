@@ -158,18 +158,17 @@ export default {
 
         // 清除指定区域的所有像素
         this.customcxt.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-        this.customcxt.strokeStyle = " #00ff00"; //矩形框颜色
-        this.customcxt.lineWidth = "2";  //矩形框宽度
+        this.customcxt.strokeStyle = " #00ff00"; //颜色
+        this.customcxt.lineWidth = "2";  //宽度
         this.list.forEach((value) => {
           this.customcxt.moveTo(value.start_x,value.start_y);
           this.customcxt.lineTo(value.end_x,value.end_y);
           this.customcxt.stroke();
         })
 
-        //this.customcxt.strokeRect(this.startX, this.startY, wwidth, wheigth);  //绘制矩形
         this.customcxt.beginPath();
-        this.customcxt.strokeStyle = " #00ff00"; //矩形框颜色
-        this.customcxt.lineWidth = "2";  //矩形框宽度
+        this.customcxt.strokeStyle = " #00ff00";
+        this.customcxt.lineWidth = "2";
         this.customcxt.moveTo(this.startX,this.startY);
         this.customcxt.lineTo(e.offsetX,e.offsetY);
         this.customcxt.stroke();
