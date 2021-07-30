@@ -1,0 +1,71 @@
+<view class="container"> 
+
+<view class="register-icon"> 
+
+<image class="register-img" src="images/EElogo.png"></image> 
+
+</view>
+
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">
+            <view class="weui-label">用户名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder"  placeholder="请输入用户名"bindinput="usernameInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder"  placeholder="请输入密码"bindinput="passwordInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">
+            <view class="weui-label">id</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder"  placeholder="请输入id" bindinput="idInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">邮箱</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder" placeholder="请输入邮箱" 
+            bindinput="emailInput"/>
+        </view>
+        <view class="weui-cell__ft">
+            <view class="weui-vcode-btn" bindtap="getVericode">获取验证码</view>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">
+            <view class="weui-label">验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder"  placeholder="请输入验证码"
+            bindinput="vericodeInput"/>
+        </view>
+    </view>
+    
+</view>
+
+
+<view class="registerBtnView"> 
+
+<button class="registerBtn"  size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="register">注册新账号</button> 
+
+</view> 
+
+<view class="returnBtnView"> 
+
+<button class="returnBtn"  size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="return">返回上一级</button> 
+
+</view> 
+
+</view>>

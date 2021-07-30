@@ -1,0 +1,48 @@
+<!--pages/manage/manage.wxml--> 
+<button bindtap="refresh">刷新</button> 
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 最初始时的搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索"/>
+                </view>
+                <!-- 可编辑时的搜索框 -->
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <!-- 取消搜索 -->
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+</view>
+
+<button class="addBtn" bindtap="addinfo">增加信息</button> 
+<button class="modifyBtn" bindtap="modifyinfo">修改信息</button> 
+
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">ID</view>
+    <view class="th">姓名</view>
+    <view class="th ">部门</view>
+    <view class="th ">权限</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{[ID]}">
+  <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+    <view class="td">{{item.id}}</view>
+    <view class="td">{{item.realname}}</view>
+    <view class="td">{{item.department}}</view>
+    <view class="td">{{item.permissions}}</view>
+  </view>
+  <view class="tr" wx:else>
+    <view class="td">{{item.id}}</view>
+    <view class="td">{{item.realname}}</view>
+    <view class="td">{{item.department}}</view>
+    <view class="td">{{item.permissions}}</view>
+  </view>
+  </block>
+</view>

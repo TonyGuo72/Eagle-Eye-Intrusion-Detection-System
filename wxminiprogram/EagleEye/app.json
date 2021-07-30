@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/monitor/monitor",
+    "pages/manage/manage",
+    "pages/figure/figure",
+    "pages/userinfo/userinfo"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor": "#F2F2F2",
+    "navigationBarBackgroundColor":"#A9A9A9",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#35495e",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "text": "监控",
+        "pagePath": "pages/monitor/monitor",
+        "iconPath": "images/eye.png",
+        "selectedIconPath": "images/selectedeye.png"
+      },
+      {
+        "text": "管理",
+        "pagePath": "pages/manage/manage",
+        "iconPath": "images/manage.png",
+        "selectedIconPath": "images/selectedmanage.png"
+      },
+      {
+        "text": "数据",
+        "pagePath": "pages/figure/figure",
+        "iconPath": "images/figure.png",
+        "selectedIconPath": "images/selectedfigure.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/userinfo/userinfo",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/selecteduser.png"
+      }
+    ]
+  },  
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+  
+
+  
+}

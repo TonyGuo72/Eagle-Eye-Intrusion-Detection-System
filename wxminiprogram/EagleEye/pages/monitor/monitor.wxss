@@ -1,0 +1,36 @@
+/* pages/monitor/monitor.wxss */
+.container { 
+ 
+  height: 100%; 
+ 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  padding: 0; 
+ 
+  box-sizing: border-box; 
+ 
+  background-color: #F2F2F2
+ 
+ } 
+
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;}
+
+.swiper-tab-list{  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #777777;
+}
+
+.on{ color: rgb(77, 77, 192);
+  border-bottom: 3rpx solid rgb(77, 77, 192);}
+
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }
+
+.swiper-box view{
+  text-align: center;
+}

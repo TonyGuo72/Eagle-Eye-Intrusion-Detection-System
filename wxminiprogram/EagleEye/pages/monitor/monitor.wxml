@@ -1,0 +1,25 @@
+<!--pages/monitor/monitor.wxml-->
+
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">一号摄像头</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">二号摄像头</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">三号摄像头</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    
+    <swiper-item>
+        <image class="image_frame" src="http://127.0.0.1:5000/video_start" mode="aspectFill">  </image>  
+    </swiper-item>
+
+    <swiper-item>
+        <!-- <view>二号摄像头</view> -->
+        <image class="image_frame" src="http://127.0.0.1:5000/video_start_second" mode="aspectFill">  </image>
+    </swiper-item>
+
+    <swiper-item>
+        <view>未检测到摄像头</view>
+    </swiper-item>
+</swiper>
+
+
